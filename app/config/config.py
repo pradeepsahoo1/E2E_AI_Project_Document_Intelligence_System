@@ -125,8 +125,9 @@ class Settings:
                 raise ValueError("GOOGLE_API_KEY required for google models")
         if self.llm_provider == "groq" and not self.groq_api_key:
             raise ValueError("GROQ_API_KEY required for Groq model")
-        if self.embedding_provider == "huggingface" and not self.huggingface_token:
-            raise ValueError("HF_TOKEN or HUGGINGFACEHUB_API_TOKEN required for Hugging Face inference")
+        # Hugging Face token validation is currently commented out
+        ##if self.embedding_provider == "huggingface" and not self.huggingface_token:
+        ##    raise ValueError("HF_TOKEN or HUGGINGFACEHUB_API_TOKEN required for Hugging Face inference")
         limits = (
             self.max_upload_mb,
             self.max_pages,
